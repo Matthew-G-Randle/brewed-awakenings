@@ -5,6 +5,17 @@ const products = getProducts()
 const employees = getEmployees()
 const orders = getOrders()
 
+document.addEventListener(
+    "click",
+    (theClickEvent) => {
+        const whatWasClickedOn = theClickEvent.target
+        const orders = getOrders()
+        if (whatWasClickedOn.dataset.type == "order"){
+            window.alert(`${whatWasClickedOn.dataset.name} is priced ${whatWasClickedOn.dataset.price}`)
+        }
+    }
+)
+
 
 // Function whose responsibility is to find the product for an order
 const findProduct = (order, allProducts) => {
